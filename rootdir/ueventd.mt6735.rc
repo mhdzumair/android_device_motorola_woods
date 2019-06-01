@@ -48,7 +48,7 @@
 /dev/trusty-ipc-dev0      0660   system     keystore
 
 # add the read write right of ttyUSB*
-/dev/bus/usb/*     	  0660   root       usb
+/dev/bus/usb/*            0660   root       usb
 /dev/ttyUSB0              0660   radio      radio
 /dev/ttyUSB1              0660   radio      radio
 /dev/ttyUSB2              0660   radio      radio
@@ -78,7 +78,6 @@
 # SGX device node
 /dev/pvrsrvkm             0666   root       root
 /dev/pvr_sync             0666   root       root
-
 
 /sys/devices/platform/leds-mt65xx/leds/green   delay_on      0664  system   system
 /sys/devices/platform/leds-mt65xx/leds/green   delay_off      0664  system   system

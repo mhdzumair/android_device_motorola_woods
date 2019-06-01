@@ -23,8 +23,11 @@ PRODUCT_NAME := lineage_woods
 PRODUCT_BRAND := Motorola
 PRODUCT_MODEL := Moto E4
 PRODUCT_MANUFACTURER := Motorola
-
+PRODUCT_RESTRICT_VENDOR_FILES := false
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 # Available languages
 PRODUCT_LOCALES := en_US en_GB ru_RU uk_UA tr_TR sk_SK vi_VN fr_FR ar_EG pt_BR
+
+PRODUCT_DEFAULT_LANGUAGE := en
+PRODUCT_DEFAULT_REGION   := US

@@ -4,6 +4,10 @@
 ro.hardware=mt6735
 ro.board.platform=mt6737m
 
+# RIL
+rild.libpath=mtk-ril.so
+rild.libargs=-d /dev/ttyC0
+
 # Wifi
 wifi.interface=wlan0
 wifi.direct.interface=p2p0
@@ -11,8 +15,6 @@ wifi.direct.interface=p2p0
 #
 ro.sf.lcd_density=320
 persist.sys.lcd_density=320
-
-ro.opengles.version=196610
 
 # USB MTP WHQL
 ro.sys.usb.mtp.whql.enable=0
@@ -26,12 +28,6 @@ ro.vold.umsdirtyratio=20
 # USB BICR function
 ro.sys.usb.bicr=no
 
-# USB Charge only function
-ro.sys.usb.charging.only=yes
-
-# audio
-ro.camera.sound.forced=0
-ro.audio.silent=0
 
 ro.zygote.preload.enable=0
 
@@ -62,8 +58,6 @@ service.wcn.driver.ready=no
 ro.sf.hwrotation=0
 persist.sys.scrollingcache=2
 
-# temporary enables NAV bar (soft keys)
-qemu.hw.mainkeys=0
 
 mediatek.wlan.chip=CONSYS_MT6735
 mediatek.wlan.module.postfix=_consys_mt6735
@@ -86,40 +80,63 @@ ro.media.maxmem=500000000
 ro.nxpnfc.feature=1
 mdc_initial_max_retry=10
 
-# Telephony
-rild.libpath=mtk-ril.so
-rild.libargs=-d /dev/ttyC0
-ro.telephony.ril_class=MT6735
-ro.telephony.ril.config=fakeiccid
+# OpenGL
+ro.opengles.version=196610
+ro.kernel.qemu.gles=0
+
+# Dalvik
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapsize=512m
+
+# Audio
+ro.camera.sound.forced=0
+ro.audio.silent=0
+persist.af.audio_patch_fm=1
+
+# enable soft keys
+qemu.hw.mainkeys=0
+
+# lcd density
+ro.sf.lcd_density=320
+
+# RIL
 ro.telephony.sim.count=2
-persist.radio.default.sim=0
-persist.radio.mobile.data=0,0
 persist.radio.multisim.config=dsds
-bgw.current3gband=0
 ril.external.md=0
 ril.telephony.mode=0
 persist.radio.fd.counter=150
 persist.radio.fd.off.counter=50
 persist.radio.fd.r8.counter=150
 persist.radio.fd.off.r8.counter=50
-persist.gemini.sim_num=2
-ro.gemini.smart_sim_switch=false
-ro.com.android.mobiledata=false
-ro.mtk_lte_support=1
-ro.boot.opt_lte_support=1
-ro.boot.opt_c2k_lte_mode=0
-ro.boot.opt_md1_support=5
-ro.boot.opt_md2_support=0
-ro.boot.opt_md3_support=0
-ro.boot.opt_md5_support=0
-persist.radio.mtk_ps3_rat=G
-ro.mtk_md_sbp_custom_value=0
-ro.mtk_world_phone_policy=0
-ro.mtk_fd_support=1
-ro.num_md_protocol=2
+===
 ro.mtk_protocol1_rat_config=Lf/Lt/W/G
 ro.longcheer.sku=EMEA
 ro.longcheer.simsum=2
 ro.longcheer.thermal=1
 ro.boot.opt_eccci_c2k=0
+=======
+ro.mtk_flight_mode_power_off_md=1
+ro.mtk_sim_hot_swap=1
+ro.mtk_world_phone=1
+ro.mtk_md_world_mode_support=1
+ro.mtk_cta_set=1
+ro.mtk_lte_support=1
+ro.mtk_rild_read_imsi=1
+ro.mtk_protocol1_rat_config=Lf/Lt/W/T/G
+persist.radio.mtk_ps2_rat=G
+ro.boot.opt_using_default=1
+ro.boot.opt_md1_support=5
+ro.boot.opt_c2k_lte_mode=1
+ro.boot.opt_ps1_rat=Lf/Lt/W/T/G
+ro.boot.opt_lte_support=1
+
+# other things
+bgw.current3gband=0
+ro.sf.hwrotation=0
+persist.mtk.wcn.combo.chipid=-1
+drm.service.enabled=true
+wfd.dummy.enable=1
+keyguard.no_require_sim=true
+camera.disable_zsl_mode=1
+persist.debug.wfd.enable=1
 media.settings.xml=/vendor/etc/media_profiles.xml

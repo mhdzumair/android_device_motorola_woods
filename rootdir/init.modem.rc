@@ -50,6 +50,8 @@ on post-fs-data
     # Clear the sim switch flag
     setprop persist.radio.simswitch ""
     
+    setprop vold.post_fs_data_done 1
+
 #
 #  Modem related services (End)
 #
